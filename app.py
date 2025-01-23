@@ -8,6 +8,7 @@ import logging
 from utils import process_multiline_string, extract_documents_based_on_distance, \
     make_json_objects, filter_unique_parent_codes, prepare_retriever
 from flask import Flask, request, jsonify
+from prepare_index import initialize_index
 
 
 
@@ -29,6 +30,9 @@ if not openai_key:
 client = openai.OpenAI(
     api_key=openai_key,
 )
+
+# Initialize the index
+initialize_index()
 
 #prepare retriever
 retriever = prepare_retriever()
