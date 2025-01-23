@@ -5,8 +5,7 @@ import openai
 from dotenv import load_dotenv
 import json
 import logging
-from utils import process_multiline_string, extract_documents_based_on_distance, \
-    make_json_objects, filter_unique_parent_codes, prepare_retriever
+from utils import process_multiline_string, make_json_objects, filter_unique_parent_codes, prepare_retriever
 from flask import Flask, request, jsonify
 from prepare_index import initialize_index
 
